@@ -10,11 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BorrowingDAO {
-  private static DBConnector dbConnector = null;
+  private final DBConnector dbConnector;
 
   public BorrowingDAO() {
-    if (dbConnector == null)
-      dbConnector = new DBConnector();
+    dbConnector = new DBConnector();
   }
 
   public void insertBorrowing(Borrowing borrowing) {

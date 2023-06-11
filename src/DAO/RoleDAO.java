@@ -11,11 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RoleDAO {
-  private static DBConnector dbConnector;
+  private final DBConnector dbConnector;
 
   public RoleDAO() {
-    if (dbConnector == null)
-      dbConnector = new DBConnector();
+    dbConnector = new DBConnector();
   }
 
   public void insertRole(Role role) {

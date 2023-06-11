@@ -11,11 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GenreDAO {
-  private static DBConnector dbConnector;
+  private final DBConnector dbConnector;
 
   public GenreDAO() {
-    if (dbConnector == null)
-      dbConnector = new DBConnector();
+    dbConnector = new DBConnector();
   }
 
   public void insertGenre(Genre genre) {

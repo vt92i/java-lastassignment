@@ -12,11 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookDAO {
-  private static DBConnector dbConnector = null;
+  private final DBConnector dbConnector;
 
   public BookDAO() {
-    if (dbConnector == null)
-      dbConnector = new DBConnector();
+    dbConnector = new DBConnector();
   }
 
   public void insertBook(Book book) {

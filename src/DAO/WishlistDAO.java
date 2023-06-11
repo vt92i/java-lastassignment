@@ -13,11 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WishlistDAO {
-  private static DBConnector dbConnector;
+  private final DBConnector dbConnector;
 
   public WishlistDAO() {
-    if (dbConnector == null)
-      dbConnector = new DBConnector();
+    dbConnector = new DBConnector();
   }
 
   public void insertWishlist(Wishlist wishlist) {

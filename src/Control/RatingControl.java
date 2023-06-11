@@ -21,7 +21,7 @@ public class RatingControl {
     ratingDAO.updateRating(rating);
   }
 
-  public List<Rating> searchRating(String keyword) {
+  public List<Rating> searchRatings(String keyword) {
     return ratingDAO.searchRatings(keyword);
   }
 

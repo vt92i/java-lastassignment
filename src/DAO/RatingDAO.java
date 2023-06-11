@@ -13,11 +13,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RatingDAO {
-  private static DBConnector dbConnector;
+  private final DBConnector dbConnector;
 
   public RatingDAO() {
-    if (dbConnector == null)
-      dbConnector = new DBConnector();
+    dbConnector = new DBConnector();
   }
 
   public void insertRating(Rating rating) {

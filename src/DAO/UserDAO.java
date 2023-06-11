@@ -12,11 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserDAO {
-  private static DBConnector dbConnector;
+  private final DBConnector dbConnector;
 
   public UserDAO() {
-    if (dbConnector == null)
-      dbConnector = new DBConnector();
+    dbConnector = new DBConnector();
   }
 
   public void insertUser(User user) {
