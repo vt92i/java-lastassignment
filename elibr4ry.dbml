@@ -1,0 +1,51 @@
+Table books {
+  isbn varchar(255) [primary key, not null]
+  title varchar(255)
+  author varchar(255)
+  publisher varchar(255)
+  year int
+  quantity int
+  genre_id int [ref: > genres.id]
+}
+
+Table borrowings {
+  id int [primary key]
+  book_isbn varchar(255)
+  user_id int [ref: > users.id]
+  date_borrowed date
+  date_returned date
+  fine_amount decimal(10,2)
+}
+
+Table genres {
+  id int [primary key]
+  name varchar(255)
+}
+
+Table ratings {
+  id int [primary key]
+  book_isbn varchar(255)
+  user_id int [ref: > users.id]
+  rating decimal(2,1)
+  comment varchar(255)
+}
+
+Table roles {
+  id int [primary key]
+  name varchar(255)
+}
+
+Table users {
+  id int [primary key]
+  username varchar(255) [unique]
+  password varchar(255)
+  name varchar(255)
+  age int
+  role int [ref: > roles.id]
+}
+
+Table wishlists {
+  id int [primary key]
+  user_id int [ref: > users.id]
+  book_isbn varchar(255)
+}
