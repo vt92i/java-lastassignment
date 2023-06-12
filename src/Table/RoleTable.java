@@ -25,18 +25,21 @@ public class RoleTable extends AbstractTableModel {
 
   @Override
   public String getColumnName(int columnIndex) {
-    return switch (columnIndex) {
-      case 0 -> "Role";
-      default -> null;
-    };
+    if (columnIndex == 0) {
+      return "Role";
+    }
+    return null;
   }
 
   @Override
   public Object getValueAt(int rowIndex, int columnIndex) {
-    return switch (columnIndex) {
-      case 0 -> roles.get(rowIndex).getName();
-      case 1 -> roles.get(rowIndex).getId();
-      default -> null;
-    };
+    switch (columnIndex) {
+      case 0:
+        return roles.get(rowIndex).getName();
+      case 1:
+        return roles.get(rowIndex).getId();
+      default:
+        return null;
+    }
   }
 }

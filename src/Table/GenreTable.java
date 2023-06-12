@@ -25,18 +25,21 @@ public class GenreTable extends AbstractTableModel {
 
   @Override
   public String getColumnName(int columnIndex) {
-    return switch (columnIndex) {
-      case 0 -> "Genre";
-      default -> null;
-    };
+    if (columnIndex == 0) {
+      return "Genre";
+    }
+    return null;
   }
 
   @Override
   public Object getValueAt(int rowIndex, int columnIndex) {
-    return switch (columnIndex) {
-      case 0 -> genres.get(rowIndex).getName();
-      case 1 -> genres.get(rowIndex).getId();
-      default -> null;
-    };
+    switch (columnIndex) {
+      case 0:
+        return genres.get(rowIndex).getName();
+      case 1:
+        return genres.get(rowIndex).getId();
+      default:
+        return null;
+    }
   }
 }

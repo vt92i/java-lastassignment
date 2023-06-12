@@ -25,26 +25,39 @@ public class UserTable extends AbstractTableModel {
 
   @Override
   public String getColumnName(int columnIndex) {
-    return switch (columnIndex) {
-      case 0 -> "Name";
-      case 1 -> "Username";
-      case 2 -> "Password";
-      case 3 -> "Role";
-      case 4 -> "Age";
-      default -> null;
-    };
+    switch (columnIndex) {
+      case 0:
+        return "Name";
+      case 1:
+        return "Username";
+      case 2:
+        return "Password";
+      case 3:
+        return "Role";
+      case 4:
+        return "Age";
+      default:
+        return null;
+    }
   }
 
   @Override
   public Object getValueAt(int rowIndex, int columnIndex) {
-    return switch (columnIndex) {
-      case 0 -> users.get(rowIndex).getName();
-      case 1 -> users.get(rowIndex).getUsername();
-      case 2 -> users.get(rowIndex).getPassword();
-      case 3 -> users.get(rowIndex).getRole().getName();
-      case 4 -> users.get(rowIndex).getAge();
-      case 5 -> users.get(rowIndex).getId();
-      default -> null;
-    };
+    switch (columnIndex) {
+      case 0:
+        return users.get(rowIndex).getName();
+      case 1:
+        return users.get(rowIndex).getUsername();
+      case 2:
+        return users.get(rowIndex).getPassword();
+      case 3:
+        return users.get(rowIndex).getRole().getName();
+      case 4:
+        return users.get(rowIndex).getAge();
+      case 5:
+        return users.get(rowIndex).getId();
+      default:
+        return null;
+    }
   }
 }

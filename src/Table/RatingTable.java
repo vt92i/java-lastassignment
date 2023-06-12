@@ -25,24 +25,35 @@ public class RatingTable extends AbstractTableModel {
 
   @Override
   public String getColumnName(int columnIndex) {
-    return switch (columnIndex) {
-      case 0 -> "Book";
-      case 1 -> "User";
-      case 2 -> "Rating";
-      case 3 -> "Comment";
-      default -> null;
-    };
+    switch (columnIndex) {
+      case 0:
+        return "Book";
+      case 1:
+        return "User";
+      case 2:
+        return "Rating";
+      case 3:
+        return "Comment";
+      default:
+        return null;
+    }
   }
 
   @Override
   public Object getValueAt(int rowIndex, int columnIndex) {
-    return switch (columnIndex) {
-      case 0 -> ratings.get(rowIndex).getBook().getTitle();
-      case 1 -> ratings.get(rowIndex).getUser().getName();
-      case 2 -> ratings.get(rowIndex).getRating();
-      case 3 -> ratings.get(rowIndex).getComment();
-      case 4 -> ratings.get(rowIndex).getId();
-      default -> null;
-    };
+    switch (columnIndex) {
+      case 0:
+        return ratings.get(rowIndex).getBook().getTitle();
+      case 1:
+        return ratings.get(rowIndex).getUser().getName();
+      case 2:
+        return ratings.get(rowIndex).getRating();
+      case 3:
+        return ratings.get(rowIndex).getComment();
+      case 4:
+        return ratings.get(rowIndex).getId();
+      default:
+        return null;
+    }
   }
 }
